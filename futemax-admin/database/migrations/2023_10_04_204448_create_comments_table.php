@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('cod_usuario');
             $table->unsignedBigInteger('cod_game')->nullable();
             $table->text('comment')->nullable();
-            $table->timestamps('');
+            $table->timestamps();
     
             // Definindo a chave estrangeira
             $table->foreign('cod_usuario')->references('cod_usuario')->on('users');
