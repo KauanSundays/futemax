@@ -15,8 +15,8 @@ return new class extends Migration
             $table->primary('cod_usuario', 25);
             $table->string('name', 25)->nullable(false);
             $table->string('email')->unique();
-            $table->string('password');
-            $table->boolean('is_admin');
+            $table->string('password')->nullable(false);
+            $table->boolean('is_admin')->nullable(false);;
             $table->timestamps();
         });
     }
