@@ -12,19 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('comments', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('cod_comment');
             $table->unsignedBigInteger('cod_usuario');
-            $table->text('comment_text');
-            $table->timestamps();
+            $table->unsignedBigInteger('cod_game')->nullable();
+            $table->text('comment')->nullable();
+            $table->timestamps('');
     
             // Definindo a chave estrangeira
             $table->foreign('cod_usuario')->references('cod_usuario')->on('users');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('comments');
