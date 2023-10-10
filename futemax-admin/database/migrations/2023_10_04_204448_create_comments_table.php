@@ -1,30 +1,25 @@
 <?php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateCommentsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
+    public function up()
     {
         Schema::create('comments', function (Blueprint $table) {
-            $table->bigIncrements('cod_comment');
-            $table->unsignedBigInteger('cod_usuario');
-            $table->unsignedBigInteger('cod_game')->nullable();
-            $table->text('comment')->nullable();
-            $table->timestamps();
-    
-            // Definindo a chave estrangeira
-            $table->foreign('cod_usuario')->references('cod_usuario')->on('users');
+            $table->id('cod_comment'); // Chave primária auto-incrementável
+            $table->text('content'); // Conteúdo do comentário
+            $table->unsignedBigInteger('game_id'); // Chave estrangeira para games
+            $table->timestamps(); // Colunas padrão para created_at e updated_at
+
+            // Define a relação com a tabela "games"
+            $table->foreign('game_id')->references('cod_game')->on('games');
         });
     }
 
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('comments');
     }
-};
+}
