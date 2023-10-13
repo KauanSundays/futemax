@@ -14,9 +14,6 @@ class CreateGamesTable extends Migration
             $table->string('game_name'); // Nome da partida
             $table->unsignedBigInteger('tag_id'); // Chave estrangeira para tags
             $table->timestamps(); // Colunas padrão para created_at e updated_at
-
-            // Define a relação com a tabela "tags"
-            $table->foreign('tag_id')->references('cod_tag')->on('tags');
         });
     }
 
