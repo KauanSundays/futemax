@@ -13,7 +13,7 @@ return new class extends Migration
             $table->string('name', 25)->nullable(false);
             $table->string('email')->unique()->nullable(false);
             $table->string('password')->nullable(false);
-            $table->boolean('is_admin')->nullable(false);
+            // $table->boolean('is_admin')->nullable(false);
             $table->timestamps();
         });
     }
