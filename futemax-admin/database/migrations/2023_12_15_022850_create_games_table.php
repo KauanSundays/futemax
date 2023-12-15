@@ -11,8 +11,8 @@ return new class extends Migration
         Schema::create('games', function (Blueprint $table) {
             $table->id();
             $table->foreignId('sport_id')->constrained('sports');
-            $table->foreignId('sport_name')->constrained('sports');
-            $table->boolean('is_live?');
+            $table->boolean('is_live');
+            $table->string('game_image')->nullable(); // Coluna para a imagem do jogo
             $table->timestamps();
         });
     }
