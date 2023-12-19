@@ -4,9 +4,9 @@ namespace App\Filament\Resources\GameResource\Pages;
 
 use App\Filament\Resources\GameResource;
 use Filament\Actions;
-use Filament\Resources\Pages\ListRecords;
+use Filament\Resources\Pages\ManageRecords;
 
-class ListGames extends ListRecords
+class ManageGames extends ManageRecords
 {
     protected static string $resource = GameResource::class;
 
@@ -14,6 +14,7 @@ class ListGames extends ListRecords
     {
         return [
             Actions\CreateAction::make(),
+            
         ];
     }
 }

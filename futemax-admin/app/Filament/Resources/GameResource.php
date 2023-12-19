@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\GameResource\Pages;
 use App\Filament\Resources\GameResource\RelationManagers;
 use App\Models\Game;
+use App\Models\Sport;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -23,13 +24,11 @@ class GameResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('sport_id')
-                    ->required()
-                    ->numeric(),
-                Forms\Components\Toggle::make('is_live')
-                    ->required(),
-                Forms\Components\FileUpload::make('game_image')
-                    ->image(),
+                Forms\Components\TextInput::make('name')->required(),
+                Forms\Components\Select::make('author_id')
+                    ->label('Author')
+                    ->options(Sport::all()->pluck('name', 'id'))
+                    ->searchable()
             ]);
     }
 
@@ -37,26 +36,14 @@ class GameResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('sport_id')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\IconColumn::make('is_live')
-                    ->boolean(),
-                Tables\Columns\ImageColumn::make('game_image'),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                //
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -65,19 +52,10 @@ class GameResource extends Resource
             ]);
     }
 
-    public static function getRelations(): array
-    {
-        return [
-            //
-        ];
-    }
-
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListGames::route('/'),
-            'create' => Pages\CreateGame::route('/create'),
-            'edit' => Pages\EditGame::route('/{record}/edit'),
+            'index' => Pages\ManageGames::route('/'),
         ];
     }
 }
