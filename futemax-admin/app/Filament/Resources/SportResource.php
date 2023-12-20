@@ -23,7 +23,9 @@ class SportResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('sport_name')
+                    ->required()
+                    ->maxLength(255),
             ]);
     }
 
@@ -31,7 +33,16 @@ class SportResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('sport_name')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //

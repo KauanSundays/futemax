@@ -25,10 +25,7 @@ class GameResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')->required(),
-                Forms\Components\Select::make('author_id')
-                    ->label('Author')
-                    ->options(Sport::all()->pluck('name', 'id'))
-                    ->searchable()
+
             ]);
     }
 
