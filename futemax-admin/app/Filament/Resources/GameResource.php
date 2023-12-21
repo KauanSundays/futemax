@@ -31,7 +31,8 @@ class GameResource extends Resource
                 Forms\Components\Toggle::make('is_live')
                     ->required(),
                 Forms\Components\FileUpload::make('game_image')
-                    ->image(),
+                    ->image()
+                    ->directory('game_images'),
                 Select::make('sport_id')
                     ->label('Author')
                     ->options(Sport::all()->pluck('sport_name','id'))
