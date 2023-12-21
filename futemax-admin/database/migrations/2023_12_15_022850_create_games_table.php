@@ -10,9 +10,10 @@ return new class extends Migration
     {
         Schema::create('games', function (Blueprint $table) {
             $table->id();
+            $table->string('name_game');
             $table->foreignId('sport_id')->constrained('sports');
             $table->boolean('is_live');
-            $table->string('game_image')->nullable(); // Coluna para a imagem do jogo
+            $table->string('game_image')->nullable();
             $table->timestamps();
         });
     }
