@@ -5,7 +5,9 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\GameResource\Pages;
 use App\Filament\Resources\GameResource\RelationManagers;
 use App\Models\Game;
+use App\Models\Sport;
 use Filament\Forms;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -23,9 +25,6 @@ class GameResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('sport_id')
-                    ->required()
-                    ->numeric(),
                 Forms\Components\TextInput::make('name_game')
                     ->required()
                     ->maxLength(255),
@@ -33,6 +32,10 @@ class GameResource extends Resource
                     ->required(),
                 Forms\Components\FileUpload::make('game_image')
                     ->image(),
+                Select::make('sport_id')
+                    ->label('Author')
+                    ->options(Sport::all()->pluck('sport_name','id'))
+                    ->searchable()
             ]);
     }
 
@@ -41,7 +44,6 @@ class GameResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('sport_id')
-                    ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('name_game')
                     ->searchable(),
