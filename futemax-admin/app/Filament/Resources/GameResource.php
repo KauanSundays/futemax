@@ -32,7 +32,8 @@ class GameResource extends Resource
                     ->required(),
                 Forms\Components\FileUpload::make('game_image')
                     ->image()
-                    ->directory('game_images'),
+                    ->directory('game_images')
+                    ->disk('public'),
                 Select::make('sport_id')
                     ->label('Author')
                     ->options(Sport::all()->pluck('sport_name','id'))
@@ -51,6 +52,7 @@ class GameResource extends Resource
                 Tables\Columns\IconColumn::make('is_live')
                     ->boolean(),
                 Tables\Columns\ImageColumn::make('game_image'),
+                    //->height(20),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
