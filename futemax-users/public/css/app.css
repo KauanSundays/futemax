@@ -4,4 +4,15 @@ body, h1, h2, h3, h4, h5, h6, p, header {
 
 .header {
     background-color: black;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 4vh;
+}
+
+.header img {
+    width: 100%;
+    height: auto;
+    display: block;
+    height: 6vh;
 }

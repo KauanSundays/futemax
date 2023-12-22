@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
-    <header class="header">teste</header>
+    <header class="header">
+        <img src="{{ asset('images/fundo.jpg') }}" alt="">
+    </header>
 </body>
 </html>
