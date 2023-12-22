@@ -13,5 +13,7 @@
         <img class="logo2" src="{{ asset('images/futemax.png') }}" alt="Menu Logo">
         <img class="background-image" src="{{ asset('images/fundo.jpg') }}" alt="">
     </header>
+    <section class="green-section">
+    </section>
 </body>
 </html>
