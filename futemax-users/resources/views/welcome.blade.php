@@ -9,7 +9,8 @@
 </head>
 <body>
     <header class="header">
-        <img src="{{ asset('images/fundo.jpg') }}" alt="">
+        <img class="logo" src="{{ asset('images/menu.png') }}" alt="Menu Logo">
+        <img class="background-image" src="{{ asset('images/fundo.jpg') }}" alt="">
     </header>
 </body>
 </html>
