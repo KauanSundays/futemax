@@ -14,6 +14,7 @@
         <img class="background-image" src="{{ asset('images/fundo.jpg') }}" alt="">
     </header>
     <section class="green-section">
+        <h1>Destaques</h1>
     </section>
 </body>
 </html>
