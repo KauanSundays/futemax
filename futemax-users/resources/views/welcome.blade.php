@@ -19,9 +19,14 @@
 
     <section class="two-aside-section">
         <aside>
-            <?foreach ($variable as $key => $value) {
-                # code...
-            }?>
+            @foreach ($games as $game)
+                <!-- Conteúdo do primeiro bloco -->
+                <div>
+                    <h2>{{ $game->name_game }}</h2>
+                    <p>{{ $game->sport->name }}</p>
+                    <!-- Adicione mais informações conforme necessário -->
+                </div>
+            @endforeach
         </aside>
         <aside>
             <!-- Conteúdo do segundo bloco -->
