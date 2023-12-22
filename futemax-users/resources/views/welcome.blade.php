@@ -16,5 +16,14 @@
     <section class="green-section">
         <h1>Destaques</h1>
     </section>
+
+    <section class="two-aside-section">
+        <aside>
+            <!-- Conteúdo do primeiro bloco -->
+        </aside>
+        <aside>
+            <!-- Conteúdo do segundo bloco -->
+        </aside>
+    </section>
 </body>
 </html>

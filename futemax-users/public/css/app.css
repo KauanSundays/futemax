@@ -1,4 +1,4 @@
-body, h1, h2, h3, h4, h5, h6, p, header, section {
+body, h1, h2, h3, h4, h5, h6, p, header, section, aside {
     margin: 0;
     padding: 0;
 }
@@ -45,13 +45,31 @@ body, h1, h2, h3, h4, h5, h6, p, header, section {
     border-top: 2px solid black;
     border-bottom: 2px solid black;
     display: flex;
-    flex-direction: column; /* Define o layout como coluna */
-    align-items: center; /* Centraliza horizontalmente */
-    justify-content: flex-start; /* Alinha no topo da section */
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .green-section h1 {
     margin: 0;
     font-weight: bold;
-    border: 2px black;
+}
+
+.two-aside-section {
+    display: flex;
+}
+
+aside {
+    margin: 10px; /* Adicione alguma margem conforme necessário */
+    padding: 20px; /* Adicione algum espaçamento interno conforme necessário */
+}
+
+aside:first-child {
+    flex: 70%; /* Largura de 80% para o primeiro aside */
+    background-color: lightblue; /* Cor de fundo para o primeiro aside */
+}
+
+aside:last-child {
+    flex: 30%; /* Largura de 20% para o segundo aside */
+    background-color: lightcoral; /* Cor de fundo para o segundo aside */
 }
