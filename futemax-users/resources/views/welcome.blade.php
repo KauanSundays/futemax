@@ -19,7 +19,9 @@
 
     <section class="two-aside-section">
         <aside>
-            <!-- Conteúdo do primeiro bloco -->
+            <?foreach ($variable as $key => $value) {
+                # code...
+            }?>
         </aside>
         <aside>
             <!-- Conteúdo do segundo bloco -->
