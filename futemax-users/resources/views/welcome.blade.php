@@ -10,6 +10,7 @@
 <body>
     <header class="header">
         <img class="logo" src="{{ asset('images/menu.png') }}" alt="Menu Logo">
+        <img class="logo2" src="{{ asset('images/menu.png') }}" alt="Menu Logo">
         <img class="background-image" src="{{ asset('images/fundo.jpg') }}" alt="">
     </header>
 </body>
