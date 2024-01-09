@@ -23,11 +23,10 @@
                 <div>
                     <h2>Partida: {{ $game->name_game }}</h2>
                     <p>Esporte: {{ $game->sport->name }}</p>
-                    <!-- Adicione mais informações conforme necessário -->
                 </div>
             @endforeach
-        </aside>    
-        
+        </aside>
+           
         
         <aside>
             <!-- Conteúdo do segundo bloco -->

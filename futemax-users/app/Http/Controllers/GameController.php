@@ -9,7 +9,7 @@ class GameController extends Controller
 {
     public function index()
     {
-        $games = Game::all();
+        $games = Game::with('sport')->get();
         return view('welcome', ['games' => $games]);
     }
 }
