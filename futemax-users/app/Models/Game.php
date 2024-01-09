@@ -13,6 +13,6 @@ class Game extends Model
 
     public function sport()
     {
-        return $this->belongsTo(Sport::class, 'sport_id');
+        return $this->belongsTo(Sport::class);
     }
 }

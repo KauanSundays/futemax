@@ -22,7 +22,7 @@
             @foreach ($games as $game)
                 <div>
                     <h2>Partida: {{ $game->name_game }}</h2>
-                    <p>Esporte: {{ $game->sport->name }}</p>
+                    <p>Esporte: {{ $game->sport->sport_name }}</p>
                 </div>
             @endforeach
         </aside>
