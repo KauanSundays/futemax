@@ -73,3 +73,9 @@ aside:last-child {
     flex: 30%; /* Largura de 20% para o segundo aside */
     background-color: lightcoral; /* Cor de fundo para o segundo aside */
 }
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}

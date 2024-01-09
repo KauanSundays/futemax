@@ -18,16 +18,19 @@
     </section>
 
     <section class="two-aside-section">
-        <aside>
-            @foreach ($games as $game)
-                <div>
+        <aside class="game-grid">
+            @foreach ($games as $key => $game)
+                <div class="game">
                     <h2>Partida: {{ $game->name_game }}</h2>
-                    <p>Esporte: {{ $game->sport->sport_name }}</p>
+                    <p>Esporte: {{ $game->sport->name }}</p>
                 </div>
+        
+                @if (($key + 1) % 2 === 0 || $loop->last)
+                    <div class="clearfix"></div>
+                @endif
             @endforeach
         </aside>
-           
-        
+
         <aside>
             <!-- Conteúdo do segundo bloco -->
         </aside>
