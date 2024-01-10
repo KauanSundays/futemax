@@ -23,8 +23,8 @@
             @foreach ($games as $key => $game)
                 <div class="game">
                     <h2>Partida: {{ $game->name_game }}</h2>
-                    <p>Esporte: {{ $game->sport->name }}</p>
-                    <img src="{{ asset('storage/game_images/' . $game->game_image) }}" alt="">
+                    <p>Esporte: {{ $game->sport->name_game }}</p>
+                    <img src="{{ asset('storage/' . $game->game_image) }}" alt="">
                 </div>
         
                 @if (($key + 1) % 2 === 0 || $loop->last)
