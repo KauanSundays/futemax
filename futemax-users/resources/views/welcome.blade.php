@@ -17,12 +17,14 @@
         <h1>Destaques</h1>
     </section>
 
+
     <section class="two-aside-section">
         <aside class="game-grid">
             @foreach ($games as $key => $game)
                 <div class="game">
                     <h2>Partida: {{ $game->name_game }}</h2>
                     <p>Esporte: {{ $game->sport->name }}</p>
+                    <img src="{{ asset('storage/game_images/' . $game->game_image) }}" alt="">
                 </div>
         
                 @if (($key + 1) % 2 === 0 || $loop->last)
